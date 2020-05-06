@@ -38,8 +38,10 @@ export default function Table(props) {
                 // },
                 {
                     isFreeAction: true,
+                    togglePanel: () => console.log('test from inner toggle pannel'),
                     render: rowData => {
-                        console.log('test in return')
+                        // console.log('test in return')
+                        handleTest()
                         return (
                             <Paper>
                                 <h1>text</h1>
@@ -48,26 +50,13 @@ export default function Table(props) {
                     },
                 },
             ]}
-            togglePanel={console.log('test')}
-            // detailPanel={rowData => {
 
-            //     return (
-            //         <Paper>
-            //             <h1>Text</h1>
-            //         </Paper>
-            //     )
-            // }
-            // }
+            togglePanel={console.log('test from toggle pannel')}
+            toggleDetailPanel={console.log('test from toggle detail pannel')}
+
             onRowClick={(event, rowData) => console.log(rowData)}
-        // onToggleDetailPanel={() => console.log('test')}
+            onToggleDetailPanel={(event, rowData) => console.log('test from panel toggel', event)}
         // onTreeExpandChange={() => console.log('test')}
-        // onClick={() => console.log('test')}
-        // onToggleDetailPanel={() => console.log('test')}
-        // actions={[{
-        //     icon: () => getDetailPanelIcon(),
-        //     onClick: () => console.log('test')
-        // }]
-        // }
 
         />
     )
